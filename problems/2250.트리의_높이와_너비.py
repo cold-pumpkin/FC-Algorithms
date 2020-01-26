@@ -12,7 +12,7 @@ n = int(input())  # 노드 개수
 min_level = [n]  # 레벨별 가장 왼쪽 노드 위치
 max_level = [0]  # 레벨별 가장 오른쪽 노드 위치
 
-# 중위 순회 구현 (전체 트리의 맨 왼쪽부터)
+# 중위 순회 구현 (전체 트리의 맨 왼쪽부터 오른쪽으로 차례대로 채워짐)
 depth = 1
 pos = 1
 def inorder_traversal(node, level):
