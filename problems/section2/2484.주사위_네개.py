@@ -11,7 +11,7 @@ def calcPrize():
             return 2000 + (arr[0] + arr[2]) * 500
     for i in range(3):
         if arr[i] == arr[i+1]:
-            return 1000 * arr[i]
+            return 1000 + arr[i] * 100
     return arr[-1] * 100
 
 N = int(input())
