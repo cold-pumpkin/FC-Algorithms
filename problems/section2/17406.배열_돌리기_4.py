@@ -31,11 +31,12 @@ def move(mat, qry):
                 rr, cc = rrr, ccc
     return newMat
 
-# 
+# 쿼리의 모든 순열에 대해서 이동
 def dfs(mat, qry):
     global ans
     if sum(qry) == K:  # 모든 쿼리 체크
         ans = min(ans, minSum(mat))
+        #print('return')
         return
     for i in range(K):
         if qry[i]:  # 쿼리 처리함
@@ -43,8 +44,10 @@ def dfs(mat, qry):
         # 쿼리 적용해 이동
         newMat = move(mat, Q[i])
         qry[i] = 1  # 체크 마킹
+        #print('dfs 호출', i, qry)
         dfs(newMat, qry)
-        qry[i] = 0
+        qry[i] = 0  # 되돌리기
+        #print('qry : ', i, qry)
 
 
 dfs(A, [0 for i in range(K)])  # 쿼리 처리했으면 1, 안했으면 0
