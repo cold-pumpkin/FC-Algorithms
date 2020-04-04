@@ -25,6 +25,6 @@ def dfs(cur):
             dfs(next_v)
 
 dfs(1)
-print(count-1)
+print(count-1)  # 시작정점을 방문한 경우 카운트 빼기
 
 
